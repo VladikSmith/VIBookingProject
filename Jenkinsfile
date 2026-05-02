@@ -1,12 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        TEST="https://reqres.in/"
-        PROD="https://restful-booker.herokuapp.com/"
-        API_BASE_URL = "${PROD}"
-    }
-
     stages {
         stage('Setup Python Environment') {
             steps {

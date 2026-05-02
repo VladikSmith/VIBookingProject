@@ -23,9 +23,9 @@ class APIClient:
 
     def get_base_url(self, environment: Environment) -> str:
         if environment == Environment.TEST:
-            return os.getenv('TEST_BASE_URL')
+            return os.getenv('TEST_BASE_URL', 'https://reqres.in/')
         elif environment == Environment.PROD:
-            return os.getenv('PROD_BASE_URL')
+            return os.getenv('PROD_BASE_URL', 'https://restful-booker.herokuapp.com/')
         else:
             raise ValueError(f'Unsupported environment value: {environment}')
 
